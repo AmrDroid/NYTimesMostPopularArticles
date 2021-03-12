@@ -21,7 +21,7 @@ A simple app to hit the NY Times Most Popular Articles API and show a list of ar
 
 ## Navigation Component Graph
 <p align="center">
-    <img src="screens/navGraph.png"/>
+    <img src="screens/nav.jpg"/>
 </p>
 <br>
 
