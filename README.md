@@ -1,6 +1,6 @@
 # NYTimesMostPopularArticles
 
-A simple app to hit the NY Times Most Popular Articles API and show a list of articles, that shows details when items on the list are tapped (a typical master/detail app) that implements MVVM architecture using Dagger2, Retrofit, Coroutines, LiveData, RoomDatabase, DataBinding and Navigation Component.
+A simple app to hit the NY Times Most Popular Articles API and show a list of articles, that shows details when items on the list are tapped (a typical master/detail app) that implements MVVM architecture using Dagger2, Retrofit, Coroutines, LiveData, RoomDatabase, DataBinding and Navigation Component.[apk](screens/app-debug.apk)
 
 <br>
 <p align="center">
@@ -49,4 +49,9 @@ A simple app to hit the NY Times Most Popular Articles API and show a list of ar
   - Build & Run the project using `Run > Run 'app'` or the following command `./gradlew installDebug`
 
 ### Unit Tests
-Run the tests using either class by class `Right-Click > Run 'TestClassName'` or by using the following command from terminal window `./gradlew test`
+-Run the tests using either class by class `Right-Click > Run 'TestClassName'` or by using the following command from terminal window `./gradlew test`
+
+### Generate a coverage report
+-Run below command to generate coverage report in Terminal window of Android Studio:
+
+  -gradlew createDebugCoverageReport
