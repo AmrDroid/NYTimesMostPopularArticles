@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/articles_nav_graph"
+    app:startDestination="@+id/articles">
+
+    <fragment
+        android:id="@+id/articles"
+        android:name="com.amrmustafa.nytimes.mostpopular.presentation.ui.fragments.ArticlesFragment"
+        tools:layout="@layout/fragment_articles">
+
+        <action
+            android:id="@+id/action_articles_details"
+            app:destination="@id/articles_details"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/articles_details"
+        android:name="com.amrmustafa.nytimes.mostpopular.presentation.ui.fragments.ArticlesDetailsFragment" />
+
+</navigation>
