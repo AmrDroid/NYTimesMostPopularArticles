@@ -31,10 +31,14 @@ android {
 
     buildTypes {
         debug {
+            buildConfigField("String", "BASE_URL", "\"https://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/\"")
+            buildConfigField("String", "API_KEY", "\"sdvErtZ4L3wzAacQ3d3amv7bOky6vzQP\"")
             minifyEnabled false
             testCoverageEnabled true
         }
         release {
+            buildConfigField("String", "BASE_URL", "\"https://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/\"")
+            buildConfigField("String", "API_KEY", "\"sdvErtZ4L3wzAacQ3d3amv7bOky6vzQP\"")
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             testCoverageEnabled true
@@ -90,7 +94,7 @@ dependencies {
     kapt libraries.daggerCompiler
     kapt libraries.daggerAndroidApt
     implementation libraries.glide
-
+    implementation libraries.fragmentsTest
 
     testImplementation libraries.junit
     testImplementation libraries.coreTest
@@ -109,6 +113,5 @@ dependencies {
     implementation libraries.espressoIdlingResource
     androidTestImplementation libraries.espressoIdlingResource
 
-    implementation "androidx.fragment:fragment-testing:1.1.0-alpha07"
 
 }

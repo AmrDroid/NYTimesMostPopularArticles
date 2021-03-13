@@ -4,7 +4,6 @@ import com.google.gson.Gson
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import com.amrmustafa.nytimes.BuildConfig
-import com.amrmustafa.nytimes.base.constants.EndpointUrl
 import dagger.Module
 import dagger.Provides
 import io.reactivex.disposables.CompositeDisposable
@@ -69,7 +68,7 @@ class NetworkModule {
             .addConverterFactory(GsonConverterFactory.create(gson))
             .addCallAdapterFactory(rxJava2CallAdapterFactory)
             .addCallAdapterFactory(CoroutineCallAdapterFactory.invoke())
-            .baseUrl(EndpointUrl)
+            .baseUrl(BuildConfig.BASE_URL)
             .client(getOkHttpClient(provideNetworkIntercepter()))
             .build()
     }

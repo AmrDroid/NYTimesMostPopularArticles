@@ -1,12 +1,11 @@
 package com.amrmustafa.nytimes.mostpopular
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import com.amrmustafa.nytimes.BuildConfig
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
 import com.amrmustafa.nytimes.MainCoroutineRule
 import com.amrmustafa.nytimes.TestData.response
-import com.amrmustafa.nytimes.base.constants.APIKey
-import com.amrmustafa.nytimes.base.constants.EndpointUrl
 import com.amrmustafa.nytimes.base.constants.Period
 import com.amrmustafa.nytimes.mostpopular.data.remote.services.ArticlesService
 import com.amrmustafa.nytimes.mostpopular.data.remote.source.ArticlesRemoteDataSource
@@ -34,11 +33,12 @@ class ArticlesRemoteDataSourceTest {
 
     lateinit var service: ArticlesService
 
+    @ExperimentalCoroutinesApi
     @Before
     fun init() {
         service = mock {
             onBlocking {
-                getArticlesAsync(Period.DAILY.value, APIKey)
+                getArticlesAsync(Period.DAILY.value, BuildConfig.API_KEY)
             } doReturn GlobalScope.async {
                 Response.success(response)
             }

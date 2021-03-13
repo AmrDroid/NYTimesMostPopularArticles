@@ -1,6 +1,5 @@
 package com.amrmustafa.nytimes.mostpopular.data.remote.services
 
-import com.amrmustafa.nytimes.base.constants.APIKey
 import com.amrmustafa.nytimes.mostpopular.data.models.ArticlesResponse
 import kotlinx.coroutines.Deferred
 import retrofit2.Response
